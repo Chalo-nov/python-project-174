@@ -14,6 +14,5 @@ def main():
     result = generate_diff(args.first_file, args.second_file)
     print(result)
 
-
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        main()
