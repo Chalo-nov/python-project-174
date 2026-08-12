@@ -1,4 +1,4 @@
-import json
+from gendiff.parser import parse_file
 
 
 def stringify_value(value):
@@ -10,8 +10,8 @@ def stringify_value(value):
 
 
 def generate_diff(file_path1, file_path2):
-    data1 = json.load(open(file_path1))
-    data2 = json.load(open(file_path2))
+    data1 = parse_file(file_path1)
+    data2 = parse_file(file_path2)
 
     all_keys = sorted(data1.keys() | data2.keys())
     lines = []
