@@ -28,3 +28,12 @@ def test_generate_diff_nested_stylish():
     result = generate_diff('file1_nested.json', 'file2_nested.json', 'stylish')
     assert isinstance(result, str)
     assert '  - setting2: 200' in result
+
+
+def test_generate_diff_plain():
+    result = generate_diff('file1_nested.json', 'file2_nested.json', 'plain')
+    assert isinstance(result, str)
+    assert "Property 'common.follow' was added with value: false" in result
+    assert "Property 'common.setting2' was removed" in result
+    expected = "Property 'common.setting3' was updated. From true to null"
+    assert expected in result
