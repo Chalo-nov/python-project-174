@@ -37,3 +37,10 @@ def test_generate_diff_plain():
     assert "Property 'common.setting2' was removed" in result
     expected = "Property 'common.setting3' was updated. From true to null"
     assert expected in result
+
+
+def test_generate_diff_json_format():
+    result = generate_diff('file1_nested.json', 'file2_nested.json', 'json')
+    assert isinstance(result, str)
+    assert '"key": "common"' in result
+    assert '"type": "nested"' in result
