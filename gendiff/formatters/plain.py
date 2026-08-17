@@ -19,7 +19,9 @@ def format_plain(diff, parent_path=''):
         property_path = f"{parent_path}.{key}" if parent_path else key
 
         if node_type == 'nested':
-            lines.append(format_plain(node['children'], property_path))
+            child_result = format_plain(node['children'], property_path)
+            if child_result:
+                lines.append(child_result)
         elif node_type == 'added':
             val = stringify_value(node['value'])
             lines.append(
