@@ -1,6 +1,6 @@
 def stringify(val, depth):
     if val is None:
-        return None
+        return 'null'
     if isinstance(val, bool):
         return str(val).lower()
     if not isinstance(val, dict):
