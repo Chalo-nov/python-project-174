@@ -29,17 +29,17 @@ def format_stylish(diff, depth=1):
         node_type = node['type']
 
         if node_type == 'added':
-            val = stringify(node['value'], depth)
+            val = stringify(node.get('value'), depth)
             lines.append(f"{indent}+ {key}: {val}")
         elif node_type == 'removed':
-            val = stringify(node['value'], depth)
+            val = stringify(node.get('value'), depth)
             lines.append(f"{indent}- {key}: {val}")
         elif node_type == 'unchanged':
-            val = stringify(node['value'], depth)
+            val = stringify(node.get('value'), depth)
             lines.append(f"{indent}  {key}: {val}")
         elif node_type == 'changed':
-            old_val = stringify(node['old_value'], depth)
-            new_val = stringify(node['new_value'], depth)
+            old_val = stringify(node.get('old_value'), depth)
+            new_val = stringify(node.get('new_value'), depth)
             lines.append(f"{indent}- {key}: {old_val}")
             lines.append(f"{indent}+ {key}: {new_val}")
         elif node_type == 'nested':
