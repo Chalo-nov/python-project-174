@@ -53,3 +53,4 @@ def format_stylish(diff, depth=1):
 
     result = '\n'.join(lines)
     return f"{{\n{result}\n{closing_indent}}}"
+    
