@@ -1,4 +1,5 @@
 def stringify(val, depth):
+    # 1. Manejo explícito de nulos, None, cadenas vacías y 'none'/'null'
     if val is None:
         return 'null'
     if isinstance(val, str):
@@ -10,6 +11,7 @@ def stringify(val, depth):
     if not isinstance(val, dict):
         return str(val)
 
+    # 2. Formateo recursivo de diccionarios
     indent_size = 4
     current_indent = ' ' * (depth * indent_size)
     deep_indent = ' ' * ((depth + 1) * indent_size)
@@ -52,4 +54,3 @@ def format_stylish(diff, depth=1):
 
     result = '\n'.join(lines)
     return f"{{\n{result}\n{closing_indent}}}"
-    
