@@ -1,17 +1,11 @@
 def stringify(val, depth):
-    # 1. Manejo explícito de nulos, None, cadenas vacías y 'none'/'null'
     if val is None:
         return 'null'
-    if isinstance(val, str):
-        if val == '' or val.strip().lower() in ('none', 'null'):
-            return 'null'
-        return val
     if isinstance(val, bool):
         return str(val).lower()
     if not isinstance(val, dict):
         return str(val)
 
-    # 2. Formateo recursivo de diccionarios
     indent_size = 4
     current_indent = ' ' * (depth * indent_size)
     deep_indent = ' ' * ((depth + 1) * indent_size)
