@@ -5,7 +5,7 @@ def build_diff_tree(data1, data2):
     for key in all_keys:
         if key not in data1:
             diff.append({
-                'key': key,
+                 'key': key,
                 'type': 'added',
                 'value': data2[key]
             })
@@ -34,5 +34,4 @@ def build_diff_tree(data1, data2):
                 'old_value': data1[key],
                 'new_value': data2[key]
             })
-
     return diff
