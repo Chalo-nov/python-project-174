@@ -1,5 +1,7 @@
 def stringify(val, depth):
-    if val is None or val == 'none' or val == 'None':
+    if val is None:
+        return 'null'
+    if isinstance(val, str) and val.lower() in ('none', 'null'):
         return 'null'
     if isinstance(val, bool):
         return str(val).lower()
