@@ -8,8 +8,7 @@ def parse_file(file_path):
             return json.load(f)
     elif file_path.endswith(('.yml', '.yaml')):
         with open(file_path, 'r') as f:
-            data = yaml.safe_load(f)
-            return sanitize_data(data)
+            return yaml.safe_load(f)
     raise ValueError(f"Unsupported file format: {file_path}")
 
 

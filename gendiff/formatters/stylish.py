@@ -1,6 +1,11 @@
 def stringify(val, depth):
-    if val is None or val == 'none' or val == 'None':
+    if val is None:
         return 'null'
+    if isinstance(val, str):
+        cleaned = val.strip().lower()
+        if cleaned in ('none', 'null', ''):
+            return 'null'
+        return val
     if isinstance(val, bool):
         return str(val).lower()
     if not isinstance(val, dict):
