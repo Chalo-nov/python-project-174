@@ -1,9 +1,9 @@
 def stringify(val, depth):
+    # Si el valor es None, o es la palabra 'none' / 'null'
     if val is None:
         return 'null'
     if isinstance(val, str):
-        cleaned = val.strip().lower()
-        if cleaned in ('none', 'null', ''):
+        if val.strip().lower() in ('none', 'null', ''):
             return 'null'
         return val
     if isinstance(val, bool):

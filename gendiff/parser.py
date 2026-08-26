@@ -11,7 +11,6 @@ def parse_file(file_path):
             return yaml.safe_load(f)
     raise ValueError(f"Unsupported file format: {file_path}")
 
-
 def sanitize_data(data):
     if isinstance(data, dict):
         return {k: sanitize_data(v) for k, v in data.items()}
