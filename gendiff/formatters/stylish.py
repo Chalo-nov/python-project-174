@@ -1,10 +1,10 @@
 def stringify(val, depth):
     if val is None:
         return 'null'
-    if isinstance(val, str) and val.lower() in ('none', 'null'):
-        return 'null'
     if isinstance(val, bool):
         return str(val).lower()
+    if isinstance(val, str) and val.lower() in ('none', 'null'):
+        return 'null'
     if not isinstance(val, dict):
         return str(val)
 
