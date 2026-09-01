@@ -17,3 +17,6 @@ Clona el repositorio e instala las dependencias:
 git clone https://github.com/Chalo-nov/python-project-174.git
 cd python-project-174
 poetry install
+
+## Videos Pruebas 
+[![asciicast](https://asciinema.org/a/UaBiJZYuNhvBSlvb.svg)](https://asciinema.org/a/UaBiJZYuNhvBSlvb)
